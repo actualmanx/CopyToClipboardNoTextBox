@@ -1,0 +1,28 @@
+
+
+button  {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAClJREFUeNpiFBQU5OXlZQADJmFhYQYYYPr16xeQ+vz5M4gDEYPIAwQYAJUPBptp0pKhAAAAAElFTkSuQmCC);
+	border: 2px solid #4CAF50;
+	color: #2393f7;
+	padding: 10px 24px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	margin: 2px 1px;
+	cursor: pointer;
+	border-radius: 12px;
+	width: 160px;
+	height: auto;
+}
+button:hover {
+	border: 2px solid red;
+}
+button:active {
+	border: 2px solid yellow;
+	outline: 0;
+	box-shadow: none;
+}
+button.focus, .button:focus {
+}
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Info</title>
+
+	<link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8">
+	</head>
+<body>
+	
+		<button class="button-earth">Earth Base</button>
+		<br>
+		<button class="button-mars">Mars Base</button>
+		<br>
+		<button class="button-triton">Triton Base</button>
+		<br>
+		<button class="button-moon">Moon Base</button>
+		<br>
+		<button class="button-titan">Titan Base</button>
+		<br>
+		<button class="button-alien">Alien Base</button>
+		<br>
+		<button class="button-europa">Europa Base</button>
+		
+	
+	
+	
+
+
+
+
+
+
+
+<script>
+
+function copyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+
+  // Credits To https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript Dean Taylor for below code
+  // *** This styling is an extra step which is likely not required. ***
+  //
+  // Why is it here? To ensure:
+  // 1. the element is able to have focus and selection.
+  // 2. if element was to flash render it has minimal visual impact.
+  // 3. less flakyness with selection and copying which **might** occur if
+  //    the textarea element is not visible.
+  //
+  // The likelihood is the element won't even render, not even a
+  // flash, so some of these are just precautions. However in
+  // Internet Explorer the element is visible whilst the popup
+  // box asking the user for permission for the web page to
+  // copy to the clipboard.
+  //
+
+  // Place in top-left corner of screen regardless of scroll position.
+  textArea.style.position = 'fixed';
+  textArea.style.top = 0;
+  textArea.style.left = 0;
+
+  // Ensure it has a small width and height. Setting to 1px / 1em
+  // doesn't work as this gives a negative w/h on some browsers.
+  textArea.style.width = '2em';
+  textArea.style.height = '2em';
+
+  // We don't need padding, reducing the size if it does flash render.
+  textArea.style.padding = 0;
+
+  // Clean up any borders.
+  textArea.style.border = 'none';
+  textArea.style.outline = 'none';
+  textArea.style.boxShadow = 'none';
+
+  // Avoid flash of white box if rendered for any reason.
+  textArea.style.background = 'transparent';
+
+
+  textArea.value = text;
+
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+
+  document.body.removeChild(textArea);
+}
+
+
+var copyEarthBtn = document.querySelector('.button-earth'),
+	copyMarsBtn = document.querySelector('.button-mars'),
+	copyTritonBtn = document.querySelector('.button-triton'),
+	copyMoonBtn = document.querySelector('.button-moon'),
+	copyTitanBtn = document.querySelector('.button-titan'),
+	copyAlienBtn = document.querySelector('.button-alien'),
+	copyEuropaBtn = document.querySelector('.button-europa');
+
+copyEarthBtn.addEventListener('click', function(event) {
+  copyTextToClipboard('GPS:Earth Base Tony:51811.63:-30481.93:10634.06:');
+});
+copyMarsBtn.addEventListener('click', function(event) {
+  copyTextToClipboard('GPS:Mars Base:1033965.22:136176.16:1692127.11:');
+});
+copyTritonBtn.addEventListener('click', function(event) {
+  copyTextToClipboard('GPS:Triton Base:865974.99:370.83:1813769.31:');
+});
+copyMoonBtn.addEventListener('click', function(event) {
+  copyTextToClipboard('GPS:Moon Base:21941.5:142406.21:-108952.58:');
+});
+copyTitanBtn.addEventListener('click', function(event) {
+  copyTextToClipboard('GPS:Titan Base:110976.22:171553.27:5772216.97:');
+});
+copyAlienBtn.addEventListener('click', function(event) {
+  copyTextToClipboard('Alien Base Place Holder');
+});
+copyEuropaBtn.addEventListener('click', function(event) {
+  copyTextToClipboard('GPS:Europa Moon Base:921833.48:21950.5:1622103.39:');
+});
+
+</script>
+</body>
+</html>
